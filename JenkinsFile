@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages{
+        stage("Clean Up"){
+            steps{
+                deleteDir()
+            }
+        }
+        stage("Clone Repo"){
+            steps{
+                sh "svn checkout http://punsrc01/svn/Controls/BU-DT2/branches/DELTA_branch/02_Software_Development/TCU_Development_AUTOSAR"
+            }
+    }
+    }
+
+}
